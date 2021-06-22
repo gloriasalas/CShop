@@ -30,7 +30,7 @@ struct ContentView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.gray)
                 
-                TextField("Search Courses", text: $txt)
+                TextField("Search Shops", text: $txt)
             }
             .padding(.vertical,12)
             .padding(.horizontal)
@@ -39,18 +39,22 @@ struct ContentView: View {
             
             HStack{
                 
-                Text("Categories")
+                Text("Businesses")
                     .font(.title2)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                
+                Spacer(minLength: 0)
                 
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
                     Text("View All")
                 }
             }
+            .foregroundColor(.black)
+            .padding(.top,25)
         
         .padding()
         
-            
+            // custom tab bar
             ZStack {
                 Spacer().fullScreenCover(isPresented: $presented, content: {
                     Button(action: {
@@ -134,57 +138,23 @@ struct ContentView: View {
                     })
                     Spacer()
                 }
-//                HStack{
-//
-//                Text("Categories")
-//                    .font(.title2)
-//                    .fontWeight(.bold)
-//
-//                Spacer(minLength: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/)
-//
-//                Button(action: {}) {
-//
-//                    Text("View All")
-//                }
-//                }
-            //    .foregroundColor(.black)
-            //    .padding(.top,25)
-            
-//                ForEach(0..<5, id: \.self) { number in
-//                    Spacer()
-//                    Button(action: {
-//                        if number == 1 {
-//                            presented.toggle()
-//                        }
-//                        else {
-//                            self.selectedIndex = number
-//                        }
-//                    }, label: {
-//                        if number == 1 {
-//                        Image(systemName: icons[number])
-//                            .font(.system(size: 25,
-//                                          weight: .regular,
-//                                          design: .default))
-//                            .foregroundColor(.white)
-//                            .frame(width: 60, height: 60)
-//                            .background(Color.blue)
-//                            .cornerRadius(30)
-//                        }
-//                        else {
-//                            Image(systemName: icons[number])
-//                                .font(.system(size: 25,
-//                                              weight: .regular,
-//                                              design: .default))
-//                                .foregroundColor(selectedIndex == number ? Color(.label): Color (UIColor.lightGray))
-//                        }
-//                    })
-//                    Spacer()
-//              }
             }
         }
         .background(Color.black.opacity(0.05).ignoresSafeArea(.all, edges: .all))
     }
 }
+
+// add a shop
+
+//struct SampleShopView : View {
+//
+//    var business: Business
+//    
+//    var body: some View {
+//
+//    }
+//}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
